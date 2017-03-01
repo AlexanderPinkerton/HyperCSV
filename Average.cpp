@@ -1,5 +1,7 @@
 #include "Average.h"
 
+/// @author Alexander Pinkerton
+
 Average::Average()
 {
 	result = 0;

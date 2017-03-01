@@ -15,6 +15,7 @@ std::vector<std::string> DatasetUtility::GetJoinFields(Dataset &set1, Dataset &s
     //Create a set containing the output field names of the join.
     std::set<std::string> fields;
 
+    //Add all of the fields from both datasets into the set
     for (auto i = set1.fieldIndices.begin();i != set1.fieldIndices.end(); i++) {
         fields.insert(i->first);
     }
@@ -47,7 +48,7 @@ void DatasetUtility::PrintRow(std::unordered_map<std::string, float> &row, std::
         } else {
             std::cout << 0;
         }
-
+        //Do not print , on last element
         if (i < fields.size()) {
             std::cout << ",";
         }
@@ -101,13 +102,12 @@ void DatasetUtility::InnerJoinAndPrint(Dataset &set1, Dataset &set2, std::string
             if (smallerSet.find(hash) != smallerSet.end()) {
                 //Construct output row from both rows.
                 std::unordered_map<std::string, float> output;
-                std::vector<float> row1 = currentRow;
-                std::vector<float> row2 = smallerSet[hash];
-                for (unsigned int i = 0; i < row1.size(); i++) {
-                    output[larger->fieldNames[i]] = row1[i];
+                std::vector<float> matchingRow = smallerSet[hash];
+                for (unsigned int i = 0; i < currentRow.size(); i++) {
+                    output[larger->fieldNames[i]] = currentRow[i];
                 }
-                for (unsigned int i = 0; i < row2.size(); i++) {
-                    output[smaller->fieldNames[i]] = row2[i];
+                for (unsigned int i = 0; i < matchingRow.size(); i++) {
+                    output[smaller->fieldNames[i]] = matchingRow[i];
                 }
 
                 DatasetUtility::PrintRow(output, outputFields);
