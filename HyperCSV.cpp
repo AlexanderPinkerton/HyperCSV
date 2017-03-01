@@ -11,6 +11,8 @@
 #include "DatasetUtility.h"
 #include "Expression.h"
 
+/// @author Alexander Pinkerton
+
 int main(int argc, char **argv)
 {
     ArgumentParser input(argc, argv);
@@ -29,7 +31,7 @@ int main(int argc, char **argv)
             int columnCount = FileUtility::columnCount(inputFile);
 
             //TODO Allows the passing of column intervals by indicies.
-            // Handle select column flag--------------------------------------------
+            // Handle select column flag----------------------------------------------------------------------------
             if (input.cmdOptionExists("-select"))
             {
                 std::vector<std::string> columnIndices = FileUtility::split(input.getCmdOption("-select"), ',');
@@ -54,17 +56,17 @@ int main(int argc, char **argv)
 
                 }
                 FileUtility::printColumns(inputFile, colSet);
-            }//--------------------------------------------
+            }
 
 
-            // Handle the expression flag--------------------------------------------
+            // Handle the expression flag----------------------------------------------------------------------------
             if (input.cmdOptionExists("-e"))
             {
                 std::string & infixExpression = input.getCmdOption("-e");
-                //jobList.push_back(std::unique_ptr<SinglePassJob>(new Expression(ExpressionParser::generateRPN(infixExpression))));
                 jobList.push_back(new Expression(ExpressionParser::generateRPN(infixExpression)));
-            }//--------------------------------------------
+            }
 
+            // Handle the info flag---------------------------------------------------------------------------------
             if (input.cmdOptionExists("-info"))
             {
                 //Print the fieldnames of the file.
@@ -78,7 +80,7 @@ int main(int argc, char **argv)
             }
 
 
-            // Handle the statistics flag--------------------------------------------
+            // Handle the statistics flag----------------------------------------------------------------------------
             if (input.cmdOptionExists("-s"))
             {
                 const std::string &statistic = input.getCmdOption("-s");
@@ -136,9 +138,9 @@ int main(int argc, char **argv)
                 {
                     std::cout << "Column number must be specified. Use -col <column>   EX: -col 1" << std::endl;
                 }
-            }//--------------------------------------------
+            }
 
-
+            //Do not read the file if there are no jobs to process.
             if (!jobList.empty())
             {
                 //Read the file and perform all of the jobs in one pass.
@@ -209,7 +211,6 @@ int main(int argc, char **argv)
             else { std::cout << "Use the -on flag to specify which column to join on."; }
         }
         else if (input.cmdOptionExists("-help")) {
-
             std::cout << "HyperCSV V1.0" << std::endl << std::endl;
             std::cout << "[Single File Commands]" << std::endl;
             std::cout << "-f is used to specify a filename. (Required for all single file commands)" << std::endl;
@@ -230,7 +231,6 @@ int main(int argc, char **argv)
             std::cout << "Example:  HyperCSV -f testfile.csv -s avg -col 1" << std::endl;
             std::cout << "Example:  HyperCSV -f testfile.csv -e 1+3/2 > output.txt" << std::endl;
             std::cout << "Example:  HyperCSV -ij file1.csv,file2.csv -on column1" << std::endl;
-
         }
         else {
             std::cout << "This program requires arguments. Get help with -help" << std::endl;

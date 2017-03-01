@@ -1,10 +1,13 @@
 #pragma once
 
+/// @author Alexander Pinkerton
+
 #include <unordered_map>
 
 #include "Column.h"
 
-
+/** This class is used to manipulate a table that has been loaded into memory
+ *  This currently only allows for read only operations **/
 class Dataset
 {
 public:

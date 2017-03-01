@@ -5,6 +5,9 @@
 #include <queue>
 #include <iostream>
 
+/// @author Alexander Pinkerton
+
+/** This class is a SinglePassJob which will calculate the median of all of the values sent to it via update once its finish method is called. **/
 class Median : public SinglePassJob
 {
 
@@ -14,12 +17,14 @@ public:
 	Median(int columnNum);
 	~Median();
 
+	//Custom comparator to implement max heap.
 	struct minComparator {
 		bool operator()(float i, float j) {
 			return i > j;
 		}
 	};
 
+	//Two stacks to hold the running values
 	std::priority_queue<float, std::vector<float>, minComparator> highers;
 	std::priority_queue<float, std::vector<float>> lowers;
 

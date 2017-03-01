@@ -1,10 +1,6 @@
-//
-// Created by Alexp on 2/24/2017.
-//
-
-
 #include "FileUtility.h"
 
+/// @author Alexander Pinkerton
 
 int FileUtility::columnCount(std::ifstream &filestream)
 {

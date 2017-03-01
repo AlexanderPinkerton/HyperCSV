@@ -1,5 +1,6 @@
 #include "Min.h"
 
+/// @author Alexander Pinkerton
 
 Min::Min()
 {

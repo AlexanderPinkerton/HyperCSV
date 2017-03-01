@@ -1,6 +1,6 @@
 #include "Max.h"
 
-
+/// @author Alexander Pinkerton
 
 Max::Max()
 {

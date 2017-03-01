@@ -1,7 +1,3 @@
-//
-// Created by Alexp on 2/24/2017.
-//
-
 #ifndef HYPERCSV_FILEUTILITY_H
 #define HYPERCSV_FILEUTILITY_H
 
@@ -22,7 +18,10 @@
 #include "Column.h"
 #include "ExpressionParser.h"
 
+/// @author Alexander Pinkerton
 
+/** Utility class which allows the reading of csv files and subsequent actions on them.
+ *  This class can be used to read a csv file into memory as well as performing a job-list on a file **/
 class FileUtility
 {
 

@@ -10,6 +10,8 @@
 
 #include <iostream>
 
+/// @author Alexander Pinkerton
+
 class ExpressionParser
 {
 public:

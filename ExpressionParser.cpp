@@ -1,5 +1,7 @@
 #include "ExpressionParser.h"
 
+/// @author Alexander Pinkerton
+
 std::unordered_map<std::string, ExpressionParser::Operator> ExpressionParser::ops =
         {
                 {"=", Operator::EQUALS},
@@ -14,8 +16,6 @@ std::unordered_map<std::string, ExpressionParser::Operator> ExpressionParser::op
 
 ExpressionParser::ExpressionParser()
 {
-
-
 }
 
 ExpressionParser::~ExpressionParser()
@@ -114,6 +114,7 @@ float ExpressionParser::evaluateExpression(std::vector<std::string> &cells, std:
     for (std::string token : FileUtility::split(postfix, ' ')) {
         if (ops.find(token) != ops.end()) {
             // Found Operator
+            //TODO: Use something other than this
             float intermediate = -666.9876543211234567890f;
             float rightOperand = operandStack.top();
             operandStack.pop();
@@ -167,6 +168,7 @@ float ExpressionParser::evaluateExpression(std::vector<std::string> &cells, std:
     return operandStack.top();
 }
 
+//Function to check order of operations.
 bool ExpressionParser::isHigherPrec(std::string &op, std::string &sub)
 {
     return (ops.find(sub) != ops.end() && ops.at(sub) >= ops.at(op));

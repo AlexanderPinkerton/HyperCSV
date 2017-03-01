@@ -1,6 +1,6 @@
 #include "Expression.h"
 
-
+/// @author Alexander Pinkerton
 
 Expression::Expression()
 {

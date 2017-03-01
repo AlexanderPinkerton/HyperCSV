@@ -3,7 +3,11 @@
 #include <string>
 #include <vector>
 
+/// @author Alexander Pinkerton
 
+/** This class is an Abstract Class which contains update and finish methods along with a result value
+ *  The update method should be called to update the result value
+ *  The finish method should be called when the job result is needed **/
 class SinglePassJob
 {
 public:

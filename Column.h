@@ -3,6 +3,8 @@
 #include <vector>
 #include <string>
 
+/// @author Alexander Pinkerton
+
 class Column
 {
 public:

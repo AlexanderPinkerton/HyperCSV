@@ -1,6 +1,6 @@
 #include "Dataset.h"
 
-
+/// @author Alexander Pinkerton
 
 Dataset::Dataset(std::unordered_map<int, Column> columns)
 :data(columns)

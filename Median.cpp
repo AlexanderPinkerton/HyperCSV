@@ -1,5 +1,7 @@
 #include "Median.h"
 
+/// @author Alexander Pinkerton
+
 //This Class uses two heaps to find a "running" median which only requires one pass over the data.
 
 Median::Median()

@@ -5,6 +5,9 @@
 #include <string>
 #include <set>
 
+/// @author Alexander Pinkerton
+
+/** Utility class which provides static functions to manipulate a Dataset **/
 class DatasetUtility
 {
 public:

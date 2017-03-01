@@ -6,6 +6,8 @@
 
 #include "FileUtility.h"
 
+/// @author Alexander Pinkerton
+
 class Expression : public SinglePassJob
 {
 public:

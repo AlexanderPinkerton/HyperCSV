@@ -1,5 +1,7 @@
 #include "DatasetUtility.h"
 
+/// @author Alexander Pinkerton
+
 DatasetUtility::DatasetUtility()
 {
 }

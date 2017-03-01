@@ -1,6 +1,6 @@
 #include "Column.h"
 
-
+/// @author Alexander Pinkerton
 
 Column::Column()
 	:length(0)
