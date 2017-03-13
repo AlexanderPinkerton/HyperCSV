@@ -5,6 +5,7 @@
 #include <queue>
 #include <iostream>
 
+
 /// @author Alexander Pinkerton
 
 /** This class is a SinglePassJob which will calculate the median of all of the values sent to it via update once its finish method is called. **/

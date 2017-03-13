@@ -1,7 +1,7 @@
 // HyperCSV.cpp : Defines the entry point for the console application.
 //
 
-#include<memory>
+#include <memory>
 
 #include "FileUtility.h"
 #include "ArgumentParser.h"
@@ -10,6 +10,7 @@
 #include "Average.h"
 #include "DatasetUtility.h"
 #include "Expression.h"
+
 
 /// @author Alexander Pinkerton
 
@@ -101,7 +102,7 @@ int main(int argc, char **argv)
                     }
 
                     //Add the statistic to the joblist.
-                    if (columnIndex > 0 && columnIndex < columnCount)
+                    if (columnIndex >= 0 && columnIndex < columnCount)
                     {
                         if (statistic == "max")
                         {

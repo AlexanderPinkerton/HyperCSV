@@ -205,7 +205,7 @@ void DatasetUtility::OuterJoinAndPrint(Dataset &set1, Dataset &set2, std::string
         }
     } else {
         //Bypass hashing and just do a super quick full outer.
-
+      
         std::vector<std::string> outputFields = DatasetUtility::GetJoinFields(set1, set2, joinField);
         DatasetUtility::PrintJoinFields(outputFields);
 
